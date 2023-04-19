@@ -1,0 +1,9 @@
+#Get the wildfly source from 
+curl https://github.com/wildfly/wildfly/releases/download/27.0.1.Final/wildfly-27.0.1.Final.zip
+
+# To build run 
+buildah bud -t wildfly-27.0.1.Final
+#To 
+
+# To deploy the container locally run 
+podman run -it -d -p 19990:9990 -p 19999:9999 -p 18080:8080 --name eap-7.4-2 --net devnet localhost/wildfly-27.0.1.Final
